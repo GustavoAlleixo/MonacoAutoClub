@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Oficina de Carros de Luxo</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f0f2f5; overflow-x: hidden; }
+    .slide { display: none; padding: 50px; text-align: center; }
+    .active { display: block; animation: fadeIn 1s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    h1 { font-size: 2.5em; margin-bottom: 20px; }
+    p { font-size: 1.2em; color: #555; }
+    .nav-buttons { margin-top: 30px; }
+    button { padding: 10px 20px; margin: 0 10px; font-size: 1em; border: none; border-radius: 5px; background: #007bff; color: white; cursor: pointer; }
+    button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+
+<div id="slides">
+  <div class="slide active">
+    <h1>1. Averiguação do Ambiente</h1>
+    <p>Pesquisa de mercado sobre demanda por manutenção de veículos premium em Campinas.</p>
+  </div>
+  <div class="slide">
+    <h1>2. Identificação de Problemas</h1>
+    <p>Falta de oficinas com atendimento premium e alta tecnologia.</p>
+  </div>
+  <div class="slide">
+    <h1>3. Hipóteses de Solução</h1>
+    <p>Criar oficina de alto padrão com serviços especializados e rápidos.</p>
+  </div>
+  <div class="slide">
+    <h1>4. Planejamento</h1>
+    <p>Objetivo: Inauguração<br>Envolvidos: 5 sócios<br>Recursos: Investimento inicial<br>Processo: Estruturação completa</p>
+  </div>
+  <div class="slide">
+    <h1>5. Pesquisa e Coleta</h1>
+    <p>Pesquisa de localização, fornecedores e benchmarking de oficinas de luxo.</p>
+  </div>
+  <div class="slide">
+    <h1>6. Viabilização do Projeto</h1>
+    <p>Análise técnica, financeira, política, social e ambiental.</p>
+  </div>
+  <div class="slide">
+    <h1>7. Projeto Preliminar</h1>
+    <p>Escolha de imóvel, fornecedores e estrutura societária.</p>
+  </div>
+  <div class="slide">
+    <h1>8. Projeto Detalhado</h1>
+    <p>Planta da oficina, layout e definição de serviços.</p>
+  </div>
+  <div class="slide">
+    <h1>9. Cronograma</h1>
+    <p>Execução em 6 meses: pesquisa, obras, compras, contratações e inauguração.</p>
+  </div>
+  <div class="slide">
+    <h1>10. Controle e Avaliação</h1>
+    <p>Relatórios mensais de desempenho e KPIs de sucesso.</p>
+  </div>
+  <div class="slide">
+    <h1>11. Documentação e Registro</h1>
+    <p>Abertura de CNPJ, licenças, seguros e registro de marca.</p>
+  </div>
+  <div class="slide">
+    <h1>12. Apresentação Final</h1>
+    <p>Slides interativos e visitas guiadas ao espaço da oficina.</p>
+  </div>
+</div>
+
+<div class="nav-buttons">
+  <button onclick="prevSlide()">Anterior</button>
+  <button onclick="nextSlide()">Próximo</button>
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[index].classList.add('active');
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+</script>
+
+</body>
+</html>
